@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "390092836235",
+    "project_id": "simple-todo-list-65860",
+    "storage_bucket": "simple-todo-list-65860.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390092836235:android:b4b971975eb449057d338e",
+        "android_client_info": {
+          "package_name": "com.example.simple_todo_list"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "390092836235-pkqmk4e3u1mgr2tbp6pn424dncrcu0e6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCWQ7tkGtOsMyITSBSJgl0X8f83kc4Tnk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "390092836235-pkqmk4e3u1mgr2tbp6pn424dncrcu0e6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "390092836235-ijt5aroepdg2cnipsmjjki9prrlf3f0o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.simpleTodoList"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
