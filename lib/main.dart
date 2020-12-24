@@ -36,6 +36,20 @@ class TasksPage extends StatelessWidget {
 
   }
 
+  Widget _buildList(QuerySnapshot snapshot) {
+
+    return ListView.builder(
+      itemCount: snapshot.docs.length,
+      itemBuilder: (context, index) {
+        final doc = snapshot.docs[index]; 
+        return ListTile(
+          title: Text(doc["name"])
+        );
+      }
+    );
+
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -62,7 +76,17 @@ class TasksPage extends StatelessWidget {
                 _saveTask(); 
               },
             )
-          ])
+          ]), 
+          StreamBuilder<QuerySnapshot>(
+            stream: FirebaseFirestore.instance.collection("tasks").snapshots(), 
+            builder: (context, snapshot) {
+              if(!snapshot.hasData) return LinearProgressIndicator(); 
+              return Expanded(
+                child: _buildList(snapshot.data)
+              );
+
+            }
+          )
         ]),
       )
     );
