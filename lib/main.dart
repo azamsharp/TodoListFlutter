@@ -42,9 +42,22 @@ class TasksPage extends StatelessWidget {
       itemCount: snapshot.docs.length,
       itemBuilder: (context, index) {
         final doc = snapshot.docs[index]; 
-        return ListTile(
-          title: Text(doc["name"])
+
+        return Dismissible(
+          key: Key(doc.id),
+          background: Container(color: Colors.red),
+          onDismissed: (direction) {
+            // delete the doc from the database 
+            FirebaseFirestore.instance.collection("tasks")
+            .doc(doc.id)
+            .delete();
+          },
+          child: ListTile(
+            title: Text(doc["name"])
+          ),
         );
+
+       
       }
     );
 
